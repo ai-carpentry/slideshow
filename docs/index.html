@@ -8,7 +8,9 @@
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.45">
 
   <meta name="author" content="이광춘">
@@ -30,7 +32,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   
   <script type="text/javascript">
@@ -335,6 +357,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -360,16 +385,1244 @@
 <section id="목차" class="slide level2">
 <h2>목차</h2>
 <ol type="1">
-<li>디지털 글쓰기</li>
-<li>쿼토 사례</li>
-<li>생성형AI 사무노동</li>
 <li>생성형AI 인터페이스</li>
-<li>저작도구: 포지트론</li>
-<li>쿼토 기본기</li>
-<li>질의응답</li>
+<li>생성형AI 사무노동</li>
+<li>디지털 글쓰기</li>
+<li>디지털 출판</li>
 </ol>
 <!-- 확정 -->
-<!-- {{< include slideshow/202408-quarto-llm/quarto-digital-writing.qmd >}} -->
+</section>
+<section>
+<section id="인터페이스-interface" class="title-slide slide level1 center">
+<h1>인터페이스 <br> (Interface)</h1>
+
+</section>
+<section id="인터페이스" class="slide level2 smaller">
+<h2>인터페이스</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">진화과정</a></li><li><a href="#tabset-1-2">CLI</a></li><li><a href="#tabset-1-3">GUI</a></li><li><a href="#tabset-1-4">WUI</a></li><li><a href="#tabset-1-5">MUI</a></li><li><a href="#tabset-1-6">LUI</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p><br> <br> <br></p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    
+    subgraph A["사용자 인터페이스"]
+    direction LR
+        CLI["CLI&lt;br&gt;Command Line Interface&lt;br&gt; 1950~"]     --&gt; GUI["GUI &lt;br&gt; Graphic User Inferface&lt;br&gt; 1970~"]
+        GUI               --&gt; WI["Web Interface &lt;br&gt; 1994~"]
+        WI --&gt; MI["Mobile Interface &lt;br&gt; 2007~"]
+        MI --&gt; NUI["LUI &lt;br&gt; Language User Interface &lt;br&gt; 2023~"]
+
+    end
+
+
+class A nodeStyle
+
+classDef nodeStyle fill:#fcfbfa,stroke:#000000,stroke-width:0.7px,font-weight:bold,font-size:14px;
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/ui_cli.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Computer_terminal" class="uri">https://en.wikipedia.org/wiki/Computer_terminal</a></li>
+</ul>
+</div>
+<div id="tabset-1-3">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/ui_gui.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li><a href="https://kartsci.org/kocomu/computer-history/graphical-user-interface-history/" class="uri">https://kartsci.org/kocomu/computer-history/graphical-user-interface-history/</a></li>
+</ul>
+</div>
+<div id="tabset-1-4">
+<p><br> <br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/ui_web.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-1-5">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/ui_mi.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li><a href="https://www.huffpost.com/entry/uber-your-way-through-cit_b_1205446" class="uri">https://www.huffpost.com/entry/uber-your-way-through-cit_b_1205446</a></li>
+</ul>
+</div>
+<div id="tabset-1-6">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/sam_altman_LUI.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li><a href="https://twitter.com/sama/status/1515764302904377344" class="uri">https://twitter.com/sama/status/1515764302904377344</a></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="챗gpt-nui" class="slide level2 smaller">
+<h2>챗GPT NUI</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">1:1 채팅</a></li><li><a href="#tabset-2-2">클릭하여 완료</a></li><li><a href="#tabset-2-3">자동완성</a></li><li><a href="#tabset-2-4">명령 팔레트</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>챗GPT (ChatGPT)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/chatgpt_writing.gif" class="quarto-figure quarto-figure-center" width="634"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2">
+<ul>
+<li>OpenAI Playground</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/ui_playground.jpg" class="quarto-figure quarto-figure-center" width="645"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-2-3">
+<ul>
+<li>GitHub Copilot</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/ui_copilot.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<ul>
+<li><a href="https://towardsdatascience.com/some-experiments-using-github-copilot-with-python-90f8065fb72e" class="uri">https://towardsdatascience.com/some-experiments-using-github-copilot-with-python-90f8065fb72e</a></li>
+</ul>
+</div>
+<div id="tabset-2-4">
+<div class="columns">
+<div class="column">
+<h4 id="사례">사례</h4>
+<div class="r-stack">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/command-tree.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/interface/generate_code.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+<div class="fragment">
+<video id="video_shortcode_videojs_video1" width="500" height="400" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="https://blog.replit.com/images/ai/aimode_future.mp4"></video>
+</div>
+</div>
+<ul>
+<li><a href="https://blog.replit.com/clui" class="uri">https://blog.replit.com/clui</a></li>
+<li><a href="https://blog.replit.com/ai" class="uri">https://blog.replit.com/ai</a></li>
+</ul>
+</div><div class="column">
+<h4 id="command-palette-역사">Command Palette 역사</h4>
+<ul>
+<li>60년대로 거슬러 올라가는 명령 팔레트는 최근 기술 업계에서 다시 인기를 얻고 있으며 사용자 중심 소프트웨어의 필수적인 부분으로 간주됨.</li>
+<li>CLI는 개인용 컴퓨터가 대중화되기 전 초기 컴퓨팅을 지배했으며 사용자가 시스템을 작동하기 위해 특정 명령을 알아야 했다. 1984년 Apple의 매킨토시와 함께 도입된 그래픽 사용자 인터페이스(GUI)는 중요한 혁신으로 여겨졌지만, 소프트웨어의 복잡성이 증가함에 따라 GUI만으로는 탐색하기가 점점 더 어려워졌다.</li>
+<li>사용자가 항목 이름의 짧은 약어입력하여 앱과 파일을 검색할 수 있는 런처가 점점 더 보편화 되었다. 예를 들어 2001년에 출시된 Mac OS X용 LaunchBar, Quicksilver, 2005년에 출시된 Apple의 시스템 전체 Spotlight가 있다. 검색과 CLI의 결합은 <strong>Command Palette</strong>의 탄생으로 이어졌다.</li>
+<li>오늘날 우리가 알고 있는 현대식 명령 팔레트는 2011년 Sublime Text 2 베타 Joe Skinner가 처음 소개. 명령줄 사용에 익숙한 프로그래머들이 단축키를 모두 외울 필요 없이 더 빠르게 작업할 수 있어 중요한 발전이 됨.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="글쓰기-오피스-전쟁" class="title-slide slide level1 center">
+<h1><strong>글쓰기</strong> <br> 오피스 전쟁</h1>
+
+</section>
+<section id="구글-검색의-종말" class="slide level2">
+<h2>구글 검색의 종말(?)</h2>
+
+<img data-src="images/office/chatGPT-search.jpg" class="quarto-figure quarto-figure-center r-stretch" width="700"></section>
+<section id="오피스-전쟁" class="slide level2 smaller">
+<h2>오피스 전쟁</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">항목</th>
+<th style="text-align: center;">MS 오피스 <sup>1</sup></th>
+<th style="text-align: center;">구글 오피스 <sup>2</sup></th>
+<th style="text-align: center;">리브레 오피스 <sup>3</sup></th>
+<th style="text-align: center;">한컴 오피스 <sup>4</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">문서 작성 및 편집</td>
+<td style="text-align: center;">워드, 엑셀, 파워포인트 등의 데스크톱 및 웹 앱 제공</td>
+<td style="text-align: center;">구글 문서, 스프레드시트, 프레젠테이션 등의 웹 앱 제공</td>
+<td style="text-align: center;">라이터, 캘크, 임프레스 등의 데스크톱 앱 제공</td>
+<td style="text-align: center;">한글, 한셀, 한쇼 등의 데스크톱 및 모바일 앱 제공</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">협업 및 공유</td>
+<td style="text-align: center;">원드라이브를 통해 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정할 수 있으나 실시간으로 보기 어려움</td>
+<td style="text-align: center;">구글 드라이브를 통해 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정하고 실시간으로 확인 가능</td>
+<td style="text-align: center;">드롭박스나 구글 드라이브와 연동하여 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정할 수 있으나 실시간으로 보기 어려움</td>
+<td style="text-align: center;">넷프리즘을 통해 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정할 수 있으나 실시간으로 보기 어려움</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">이메일 및 채팅</td>
+<td style="text-align: center;">Outlook을 통해 비즈니스 메일 제공. Teams을 통해 채팅 및 화상 회의 가능</td>
+<td style="text-align: center;">Gmail을 통해 비즈니스 메일 제공. Chat과 Meet을 통해 채팅 및 화상 회의 가능</td>
+<td style="text-align: center;">이메일 및 채팅 기능 없음</td>
+<td style="text-align: center;">이메일 및 채팅 기능 없음</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">가격</td>
+<td style="text-align: center;">1인당 월 5~20달러 다양한 요금제 제공. 데스크톱 앱 사용 가능한 요금제는 12.5달러부터 시작</td>
+<td style="text-align: center;">1인당 월 6~18달러까지 다양한 요금제 제공</td>
+<td style="text-align: center;">완전 무료</td>
+<td style="text-align: center;">개인용은 무료로 사용 가능하며 업무용은 별도로 견적 요청 필요</td>
+</tr>
+</tbody>
+</table>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>https://www.microsoft.com/ko-kr/microsoft-365/business</p></li><li id="fn2"><p>https://workspace.google.com/intl/ko_kr/</p></li><li id="fn3"><p>https://www.libreoffice.org/</p></li><li id="fn4"><p>https://www.hancom.com/product/productMain.do</p></li></ol></aside></section>
+<section id="오피스-전쟁-패러다임-충돌" class="slide level2">
+<h2>오피스 전쟁: 패러다임 충돌</h2>
+
+<img data-src="images/office/writing-evolution.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="챗gpt-시대-사무실" class="slide level2">
+<h2>챗GPT 시대 사무실</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">챗GPT 사용원인</a></li><li><a href="#tabset-3-2">인터페이스</a></li><li><a href="#tabset-3-3">챗GPT AS-IS</a></li><li><a href="#tabset-3-4">챗GPT TO-BE</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/office/chatGPT_why.jpg" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/office/chatGPT_interface.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-3-3">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/office/chatGPT-AS-IS.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-3-4">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/office/chatGPT-TO-BE.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="챗gpt가-이룬-대통합" class="slide level2">
+<h2>챗GPT가 이룬 대통합</h2>
+
+<img data-src="images/office/chatGPT-Text-to-X.jpg" class="quarto-figure quarto-figure-center r-stretch"></section></section>
+<section>
+<section id="도구문서의-인간-디지털-저작" class="title-slide slide level1 center">
+<h1>도구(문서)의 인간 <br> 디지털 저작</h1>
+<p><br></p>
+
+<img data-src="images/writing/homo-faber.jpg" class="r-stretch"></section>
+<section id="데이터-과학-과거와-현재" class="slide level2 smaller">
+<h2>데이터 과학 과거와 현재</h2>
+<p><br> <br></p>
+<div class="columns">
+<div class="column">
+<h3 id="과거">과거</h3>
+<p><br></p>
+<p><img data-src="images/writing/jobshop.gif"></p>
+</div><div class="column">
+<h3 id="현재">현재</h3>
+<p><br></p>
+<p><img data-src="images/writing/quarto_to_go.gif"></p>
+</div>
+</div>
+</section>
+<section id="글쓰기-진화" class="slide level2 smaller">
+<h2>글쓰기 진화</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">글쓰기 역사</a></li><li><a href="#tabset-4-2">생산성과 자동화를 넘어</a></li><li><a href="#tabset-4-3">개발과 저작</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p><img data-src="images/writing/writing_history.jpg"></p>
+</div>
+<div id="tabset-4-2">
+<p><img data-src="images/writing/writing-evolution.jpg"></p>
+</div>
+<div id="tabset-4-3">
+<p><img data-src="images/writing/mermaid_docu_sw.jpg"></p>
+<div class="cell" data-reveal="true" data-eval="false" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="데이터-과학-디지털-글쓰기" class="slide level2 smaller">
+<h2>데이터 과학 → 디지털 글쓰기</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">데이터 과학</a></li><li><a href="#tabset-5-2">문서 구성요소</a></li><li><a href="#tabset-5-3">문서 복잡성</a></li><li><a href="#tabset-5-4">문서 도구 개발 역사</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p><img data-src="images/writing/horst-eco-r4ds.png"></p>
+</div>
+<div id="tabset-5-2">
+<p><img data-src="images/writing/data_science_document.jpg"></p>
+</div>
+<div id="tabset-5-3">
+<p><img data-src="images/writing/markdown-writing.png" width="880"></p>
+</div>
+<div id="tabset-5-4">
+<div class="cell">
+<div class="cell-output-display">
+<div id="lrezafmfdz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lrezafmfdz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lrezafmfdz thead, #lrezafmfdz tbody, #lrezafmfdz tfoot, #lrezafmfdz tr, #lrezafmfdz td, #lrezafmfdz th {
+  border-style: none;
+}
+
+#lrezafmfdz p {
+  margin: 0;
+  padding: 0;
+}
+
+#lrezafmfdz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lrezafmfdz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lrezafmfdz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lrezafmfdz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lrezafmfdz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lrezafmfdz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lrezafmfdz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lrezafmfdz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lrezafmfdz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lrezafmfdz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lrezafmfdz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lrezafmfdz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lrezafmfdz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lrezafmfdz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lrezafmfdz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrezafmfdz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lrezafmfdz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lrezafmfdz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lrezafmfdz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrezafmfdz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lrezafmfdz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrezafmfdz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lrezafmfdz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrezafmfdz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lrezafmfdz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lrezafmfdz .gt_left {
+  text-align: left;
+}
+
+#lrezafmfdz .gt_center {
+  text-align: center;
+}
+
+#lrezafmfdz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lrezafmfdz .gt_font_normal {
+  font-weight: normal;
+}
+
+#lrezafmfdz .gt_font_bold {
+  font-weight: bold;
+}
+
+#lrezafmfdz .gt_font_italic {
+  font-style: italic;
+}
+
+#lrezafmfdz .gt_super {
+  font-size: 65%;
+}
+
+#lrezafmfdz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lrezafmfdz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lrezafmfdz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lrezafmfdz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lrezafmfdz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lrezafmfdz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lrezafmfdz .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lrezafmfdz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lrezafmfdz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_col_headings">
+<th id="연도" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">연도</th>
+<th id="도구" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">도구</th>
+<th id="개발자" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">개발자</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">1978</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://en.wikipedia.org/wiki/TeX">TeX</a></td>
+<td class="gt_row gt_center" headers="개발자">Donald Knuth</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="연도">1984</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate Programming</a></td>
+<td class="gt_row gt_center" headers="개발자">Donald Knuth</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">1988</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://www.wolfram.com/mathematica/scrapbook/">Mathematica Notebooks</a></td>
+<td class="gt_row gt_center" headers="개발자">Stephen Wolfram</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="연도">2001</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://ipython.org">IPython</a></td>
+<td class="gt_row gt_center" headers="개발자">Fernando Perez</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">2003</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://en.wikipedia.org/wiki/Org-mode">Emacs org-mode</a></td>
+<td class="gt_row gt_center" headers="개발자">Carsten Dominik</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="연도">2004</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a></td>
+<td class="gt_row gt_center" headers="개발자">John Gruber</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">2005</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://doc.sagemath.org/html/en/reference/index.html">Sage Notebook</a></td>
+<td class="gt_row gt_center" headers="개발자">William Stein</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="연도">2006</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://en.wikipedia.org/wiki/Pandoc">Pandoc</a></td>
+<td class="gt_row gt_center" headers="개발자">John MacFarlane</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">2009</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://github.github.com/gfm/">GitHub Flavored Markdown</a></td>
+<td class="gt_row gt_center" headers="개발자">Tom Preston-Werner</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="연도">2011</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://ipython.org/ipython-doc/3/notebook/">iPython Notebook</a></td>
+<td class="gt_row gt_center" headers="개발자">Fernando Perez</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">2012</td>
+<td class="gt_row gt_center" headers="도구"><a href="http://yihui.name/knitr/">knitr</a></td>
+<td class="gt_row gt_center" headers="개발자">Yihui Xie</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_center" headers="연도">2014</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://juypter.org">Project Jupyter</a></td>
+<td class="gt_row gt_center" headers="개발자">Fernando Perez</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_center" headers="연도">2020</td>
+<td class="gt_row gt_center" headers="도구"><a href="https://quarto.org">Quarto</a></td>
+<td class="gt_row gt_center" headers="개발자">J.J. Allaire</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="디지털-글쓰기---쿼토" class="slide level2 smaller">
+<h2>디지털 글쓰기 - 쿼토</h2>
+<div class="panel-tabset">
+<ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">삼권분립</a></li><li><a href="#tabset-6-2">쿼토 소개</a></li><li><a href="#tabset-6-3">쿼토 작업흐름</a></li><li><a href="#tabset-6-4">쿼토</a></li></ul>
+<div class="tab-content">
+<div id="tabset-6-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/writing/three-pillar.png" class="quarto-figure quarto-figure-center" width="615"></p>
+</figure>
+</div>
+
+</div>
+<div id="tabset-6-2">
+<p><br></p>
+<p><img data-src="images/writing/horst_quarto_schematic.png"></p>
+</div>
+<div id="tabset-6-3">
+<p><br> <br></p>
+<p><img data-src="images/writing/quarto_workflow_mermaid.png"></p>
+<div class="cell" data-reveal="true" data-eval="false" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-6-4">
+<div id="tbl-quarto-rmarkdown" class="quarto-float quarto-figure quarto-figure-center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-quarto-rmarkdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+표&nbsp;1: R 마크다운과 쿼토 비교
+</figcaption>
+<div aria-describedby="tbl-quarto-rmarkdown-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">기능</th>
+<th style="text-align: left;">R 마크다운</th>
+<th style="text-align: left;">쿼토(Quarto)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">파일형식</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rmarkdown/reference/html_document.html">html_document</a> / <a href="https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html">pdf_document</a> / <a href="https://pkgs.rstudio.com/rmarkdown/reference/word_document.html">word_document</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/output-formats/html-basics.html">html</a> / <a href="https://quarto.org/docs/output-formats/pdf-basics.html">pdf</a> / <a href="https://quarto.org/docs/output-formats/ms-word.html">docx</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">비머(Beamer)</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html">beamer_presentation</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/presentations/beamer.html">beamer</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">파워포인트(PPT)</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html">powerpoint_presentation</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/presentations/powerpoint.html">pptx</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">웹 슬라이드</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/rmarkdown/xaringan.html">xaringan</a> / <a href="https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html">ioslides</a> / <a href="https://bookdown.org/yihui/rmarkdown/revealjs.html">revealjs</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/presentations/revealjs/">revealjs</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">고급 레이아웃</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/rmarkdown/tufte-handouts.html">tufte</a> / <a href="https://rstudio.github.io/distill/figures.html">distill</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/authoring/article-layout.html">Quarto Article Layout</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">상호 참조</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/bookdown/a-single-document.html">html_document2</a> / <a href="https://bookdown.org/yihui/bookdown/a-single-document.html">pdf_document2</a> / <a href="https://bookdown.org/yihui/bookdown/a-single-document.html">word_document2</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/authoring/cross-references.html">Quarto Crossrefs</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">웹사이트/블로그</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/blogdown/">blogdown</a> / <a href="https://pkgs.rstudio.com/distill/">distill</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/websites/">Quarto Websites</a> / <a href="https://quarto.org/docs/websites/website-blog.html">Quarto Blogs</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">책</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/bookdown/">bookdown</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/books/">Quarto Books</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">인터랙티브 문서</td>
+<td style="text-align: left;"><a href="https://bookdown.org/yihui/rmarkdown/shiny-documents.html">Shiny Documents</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/interactive/shiny/">Quarto Interactive Documents</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">페이지 HTML</td>
+<td style="text-align: left;"><a href="https://github.com/rstudio/pagedown">pagedown</a></td>
+<td style="text-align: left;">출시 예정</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">학술 논문</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/rticles/">rticles</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/journals/">Quarto Journal Articles</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">대쉬보드</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/flexdashboard/">flexdashboard</a></td>
+<td style="text-align: left;"><a href="https://quarto.org/docs/dashboards/">Quarto Dashboards</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">인터랙티브 자습서</td>
+<td style="text-align: left;"><a href="https://pkgs.rstudio.com/learnr/">learnr</a></td>
+<td style="text-align: left;">계획 없음</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside><div>
+<p><a href="https://r2bit.com/gpt-writing/">챗GPT 디지털 글쓰기</a></p>
+</div></aside></section></section>
+<section>
+<section id="디지털-출판" class="title-slide slide level1 center">
+<h1>디지털 출판</h1>
+
+</section>
+<section id="디지털쿼토-출판" class="slide level2 smaller">
+<h2>디지털(쿼토) 출판</h2>
+<div class="panel-tabset">
+<ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">책</a></li><li><a href="#tabset-7-2">PPT</a></li><li><a href="#tabset-7-3">웹사이트</a></li><li><a href="#tabset-7-4">대시보드</a></li><li><a href="#tabset-7-5">웹앱(BitStat2)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-7-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/chatGPT_series3.png" class="quarto-figure quarto-figure-center" width="552"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-7-2">
+<p align="center">
+<iframe width="780" height="550" src="https://r2bit.com/bitSlide/" title="발표자료">
+</iframe>
+</p>
+<p><a href="https://r2bit.com/bitSlide/" class="uri">https://r2bit.com/bitSlide/</a></p>
+</div>
+<div id="tabset-7-3">
+<p align="center">
+<iframe width="780" height="550" src="https://r2bit.com/" title="공익법인 홈페이지">
+</iframe>
+</p>
+<p><a href="https://r2bit.com/" class="uri">https://r2bit.com/</a></p>
+</div>
+<div id="tabset-7-4">
+<p align="center">
+<iframe width="780" height="550" src="https://statkclee.quarto.pub/" title="선거 대시보드">
+</iframe>
+</p>
+<p><a href="https://statkclee.quarto.pub/" class="uri">https://statkclee.quarto.pub/</a></p>
+</div>
+<div id="tabset-7-5">
+<p align="center">
+<iframe width="780" height="550" src="https://r2bit.com/BitStat2/" title="BitStat2">
+</iframe>
+</p>
+<p><a href="https://r2bit.com/BitStat2/" class="uri">https://r2bit.com/BitStat2/</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="챗gpt-데이터-과학-도서" class="slide level2 smaller">
+<h2>챗GPT 데이터 과학 도서</h2>
+<div class="panel-tabset">
+<ul id="tabset-8" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-8-1">챗GPT 시리즈</a></li><li><a href="#tabset-8-2">데이터 과학</a></li><li><a href="#tabset-8-3">코딩</a></li><li><a href="#tabset-8-4">쿼토</a></li><li><a href="#tabset-8-5">SQL</a></li><li><a href="#tabset-8-6">유닉스 쉘</a></li><li><a href="#tabset-8-7">확률통계</a></li></ul>
+<div class="tab-content">
+<div id="tabset-8-1">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/chatGPT_series3.png" class="quarto-figure quarto-figure-center" width="552"></p>
+</figure>
+</div>
+</div>
+<div id="tabset-8-2">
+<div>
+
+</div>
+<div id="chatGPT-ds" class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 45.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/cover_ds.jpg" class="quarto-figure quarto-figure-center" width="250"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/ds_logo.png" class="quarto-figure quarto-figure-center" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>📘 교보 POD 종이책: <a href="https://bit.ly/4cVDxxL" class="uri">https://bit.ly/4cVDxxL</a></p>
+<p>📗 교보 전자책: <a href="https://bit.ly/4dccQ8n" class="uri">https://bit.ly/4dccQ8n</a></p>
+<p>🌐 웹사이트: <a href="https://bit.ly/4909pOB" class="uri">https://bit.ly/4909pOB</a></p>
+<p>💻 소스코드: <a href="https://bit.ly/3wXugES" class="uri">https://bit.ly/3wXugES</a> <span class="citation" data-cites="lee2024ds">(이광춘 2024b)</span></p>
+</div>
+<div id="tabset-8-3">
+<div>
+
+</div>
+<div id="chatGPT-coding" class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 45.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/cover_coding.jpg" class="quarto-figure quarto-figure-center" width="250"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/coding_logo.png" class="quarto-figure quarto-figure-center" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>📘 교보 POD 종이책: <a href="https://bit.ly/4a8v1JS" class="uri">https://bit.ly/4a8v1JS</a></p>
+<p>📗 교보 전자책: <a href="https://bit.ly/4auasHU" class="uri">https://bit.ly/4auasHU</a></p>
+<p>🌐 웹사이트: <a href="https://bit.ly/48V8u1T" class="uri">https://bit.ly/48V8u1T</a></p>
+<p>💻 소스코드: <a href="https://bit.ly/48RqMB9" class="uri">https://bit.ly/48RqMB9</a> <span class="citation" data-cites="lee2024coding">(이광춘 2024c)</span></p>
+</div>
+<div id="tabset-8-4">
+<div>
+
+</div>
+<div id="chatGPT-sql" class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 45.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/cover_quarto.jpg" class="quarto-figure quarto-figure-center" width="250"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/quarto_logo.png" class="quarto-figure quarto-figure-center" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>📘 교보 POD 종이책: <a href="https://bit.ly/3wElKuk" class="uri">https://bit.ly/3wElKuk</a></p>
+<p>📗 교보 전자책: <a href="https://bit.ly/3IkWE6f" class="uri">https://bit.ly/3IkWE6f</a></p>
+<p>🌐 웹사이트: <a href="https://bit.ly/3P7PVjX" class="uri">https://bit.ly/3P7PVjX</a></p>
+<p>💻 소스코드: <a href="https://bit.ly/3InK46m" class="uri">https://bit.ly/3InK46m</a> <span class="citation" data-cites="lee2024quarto">(이광춘 2024d)</span></p>
+</div>
+<div id="tabset-8-5">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 45.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/sql_cover.jpg" class="quarto-figure quarto-figure-center" width="250"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/sql_logo.png" class="quarto-figure quarto-figure-center" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>📘 교보 POD 종이책: <a href="https://bit.ly/3OJmMeT" class="uri">https://bit.ly/3OJmMeT</a></p>
+<p>📗 교보 전자책: <a href="https://bit.ly/48fujZD" class="uri">https://bit.ly/48fujZD</a></p>
+<p>🌐 웹사이트: <a href="https://bit.ly/48gYn7d" class="uri">https://bit.ly/48gYn7d</a></p>
+<p>💻 소스코드: <a href="https://bit.ly/3wrgeuP" class="uri">https://bit.ly/3wrgeuP</a> <span class="citation" data-cites="lee2024sql">(이광춘 2024a)</span></p>
+</div>
+<div id="tabset-8-6">
+<div>
+
+</div>
+<div id="chatGPT-shell" class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 45.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/cover_unix.jpg" class="quarto-figure quarto-figure-center" width="250"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 54.5%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/publishing/hex_chatGPT_unix_shell_02.png" class="quarto-figure quarto-figure-center" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>📘 교보 POD 종이책: <a href="https://bit.ly/434h5y9" class="uri">https://bit.ly/434h5y9</a></p>
+<p>📗 교보 전자책: <a href="https://bit.ly/3KzUdOU">https://bit.ly/KzUdOU</a></p>
+<p>🌐 웹사이트: <a href="https://bit.ly/3I4FpWS" class="uri">https://bit.ly/3I4FpWS</a></p>
+<p>💻 소스코드: <a href="https://bit.ly/49p0I1f">https://bit.ly/3wrgeuP</a> <span class="citation" data-cites="lee2023shell">(이광춘·신종화 2023)</span></p>
+<p>📰 뉴스기사: <a href="https://omn.kr/25f0i">챗GPT가 던진 새 가능성, 데이터 과학 분야 통해 미리 살펴보기</a></p>
+</div>
+<div id="tabset-8-7">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>준비중</p>
+</div>
+</div>
+</div>
+<p>📘 교보 POD 종이책: 준비중</p>
+<p>📗 교보 전자책: 준비중</p>
+<p>🌐 웹사이트: <a href="https://r2bit.com/gpt-stat/" class="uri">https://r2bit.com/gpt-stat/</a></p>
+<p>💻 소스코드: <a href="https://github.com/bit2r/gpt-stat/" class="uri">https://github.com/bit2r/gpt-stat/</a></p>
+</div>
+</div>
+</div>
+</section></section>
+<section id="참고문헌" class="title-slide slide level1 smaller scrollable">
+<h1>참고문헌</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lee2024sql" class="csl-entry" role="listitem">
+이광춘. 2024a. <em>챗GPT SQL</em>. 한국 R 사용자회.
+</div>
+<div id="ref-lee2024ds" class="csl-entry" role="listitem">
+———. 2024b. <em>챗GPT 데이터 과학</em>. 한국 R 사용자회.
+</div>
+<div id="ref-lee2024coding" class="csl-entry" role="listitem">
+———. 2024c. <em>챗GPT 코딩</em>. 한국 R 사용자회.
+</div>
+<div id="ref-lee2024quarto" class="csl-entry" role="listitem">
+———. 2024d. <em>챗GPT 쿼토</em>. 한국 R 사용자회.
+</div>
+<div id="ref-lee2023shell" class="csl-entry" role="listitem">
+이광춘·신종화. 2023. <em>챗GPT 유닉스 쉘: 데이터 과학 자동화 도구</em>. 한국 R 사용자회.
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <p><img src="_extensions/padsInsper/insper/logo.png" class="slide-logo"></p>
@@ -378,6 +1631,8 @@
 </div>
 </div>
 </section>
+
+
     </div>
   </div>
 
@@ -588,6 +1843,82 @@
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -775,6 +2106,7 @@
       }
     });
     </script>
+    <script>videojs(video_shortcode_videojs_video1);</script>
     
 
 </body></html>

@@ -4,6 +4,111 @@
     "href": "index.html#목차",
     "title": "생성형 AI",
     "section": "목차",
-    "text": "목차\n\n디지털 글쓰기\n쿼토 사례\n생성형AI 사무노동\n생성형AI 인터페이스\n저작도구: 포지트론\n쿼토 기본기\n질의응답\n\n\n\n\n\n\n\n한국 R 사용자회 chatGPT. theme insper 소스코드 GitHub."
+    "text": "목차\n\n생성형AI 인터페이스\n생성형AI 사무노동\n디지털 글쓰기\n디지털 출판"
+  },
+  {
+    "objectID": "index.html#인터페이스",
+    "href": "index.html#인터페이스",
+    "title": "생성형 AI",
+    "section": "인터페이스",
+    "text": "인터페이스\n\n진화과정CLIGUIWUIMUILUI\n\n\n  \n\n\n\n\n\nflowchart TB\n    \n    subgraph A[\"사용자 인터페이스\"]\n    direction LR\n        CLI[\"CLI&lt;br&gt;Command Line Interface&lt;br&gt; 1950~\"]     --&gt; GUI[\"GUI &lt;br&gt; Graphic User Inferface&lt;br&gt; 1970~\"]\n        GUI               --&gt; WI[\"Web Interface &lt;br&gt; 1994~\"]\n        WI --&gt; MI[\"Mobile Interface &lt;br&gt; 2007~\"]\n        MI --&gt; NUI[\"LUI &lt;br&gt; Language User Interface &lt;br&gt; 2023~\"]\n\n    end\n\n\nclass A nodeStyle\n\nclassDef nodeStyle fill:#fcfbfa,stroke:#000000,stroke-width:0.7px,font-weight:bold,font-size:14px;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/Computer_terminal\n\n\n\n\n\n\n\n\n\n\nhttps://kartsci.org/kocomu/computer-history/graphical-user-interface-history/\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.huffpost.com/entry/uber-your-way-through-cit_b_1205446\n\n\n\n\n\n\n\n\n\nhttps://twitter.com/sama/status/1515764302904377344"
+  },
+  {
+    "objectID": "index.html#챗gpt-nui",
+    "href": "index.html#챗gpt-nui",
+    "title": "생성형 AI",
+    "section": "챗GPT NUI",
+    "text": "챗GPT NUI\n\n1:1 채팅클릭하여 완료자동완성명령 팔레트\n\n\n\n챗GPT (ChatGPT)\n\n\n\n\n\n\n\n\n\nOpenAI Playground\n\n\n\n\n\n\n\n\n\nGitHub Copilot\n\n\n\n\n\n\n\nhttps://towardsdatascience.com/some-experiments-using-github-copilot-with-python-90f8065fb72e\n\n\n\n\n\n사례\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://blog.replit.com/clui\nhttps://blog.replit.com/ai\n\n\nCommand Palette 역사\n\n60년대로 거슬러 올라가는 명령 팔레트는 최근 기술 업계에서 다시 인기를 얻고 있으며 사용자 중심 소프트웨어의 필수적인 부분으로 간주됨.\nCLI는 개인용 컴퓨터가 대중화되기 전 초기 컴퓨팅을 지배했으며 사용자가 시스템을 작동하기 위해 특정 명령을 알아야 했다. 1984년 Apple의 매킨토시와 함께 도입된 그래픽 사용자 인터페이스(GUI)는 중요한 혁신으로 여겨졌지만, 소프트웨어의 복잡성이 증가함에 따라 GUI만으로는 탐색하기가 점점 더 어려워졌다.\n사용자가 항목 이름의 짧은 약어입력하여 앱과 파일을 검색할 수 있는 런처가 점점 더 보편화 되었다. 예를 들어 2001년에 출시된 Mac OS X용 LaunchBar, Quicksilver, 2005년에 출시된 Apple의 시스템 전체 Spotlight가 있다. 검색과 CLI의 결합은 Command Palette의 탄생으로 이어졌다.\n오늘날 우리가 알고 있는 현대식 명령 팔레트는 2011년 Sublime Text 2 베타 Joe Skinner가 처음 소개. 명령줄 사용에 익숙한 프로그래머들이 단축키를 모두 외울 필요 없이 더 빠르게 작업할 수 있어 중요한 발전이 됨."
+  },
+  {
+    "objectID": "index.html#구글-검색의-종말",
+    "href": "index.html#구글-검색의-종말",
+    "title": "생성형 AI",
+    "section": "구글 검색의 종말(?)",
+    "text": "구글 검색의 종말(?)"
+  },
+  {
+    "objectID": "index.html#오피스-전쟁",
+    "href": "index.html#오피스-전쟁",
+    "title": "생성형 AI",
+    "section": "오피스 전쟁",
+    "text": "오피스 전쟁\n\n\n\n\n\n\n\n\n\n\n항목\nMS 오피스 1\n구글 오피스 2\n리브레 오피스 3\n한컴 오피스 4\n\n\n\n\n문서 작성 및 편집\n워드, 엑셀, 파워포인트 등의 데스크톱 및 웹 앱 제공\n구글 문서, 스프레드시트, 프레젠테이션 등의 웹 앱 제공\n라이터, 캘크, 임프레스 등의 데스크톱 앱 제공\n한글, 한셀, 한쇼 등의 데스크톱 및 모바일 앱 제공\n\n\n협업 및 공유\n원드라이브를 통해 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정할 수 있으나 실시간으로 보기 어려움\n구글 드라이브를 통해 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정하고 실시간으로 확인 가능\n드롭박스나 구글 드라이브와 연동하여 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정할 수 있으나 실시간으로 보기 어려움\n넷프리즘을 통해 문서를 클라우드에 저장하고 공유 가능. 여러 사람이 동시에 문서를 수정할 수 있으나 실시간으로 보기 어려움\n\n\n이메일 및 채팅\nOutlook을 통해 비즈니스 메일 제공. Teams을 통해 채팅 및 화상 회의 가능\nGmail을 통해 비즈니스 메일 제공. Chat과 Meet을 통해 채팅 및 화상 회의 가능\n이메일 및 채팅 기능 없음\n이메일 및 채팅 기능 없음\n\n\n가격\n1인당 월 5~20달러 다양한 요금제 제공. 데스크톱 앱 사용 가능한 요금제는 12.5달러부터 시작\n1인당 월 6~18달러까지 다양한 요금제 제공\n완전 무료\n개인용은 무료로 사용 가능하며 업무용은 별도로 견적 요청 필요\n\n\n\nhttps://www.microsoft.com/ko-kr/microsoft-365/businesshttps://workspace.google.com/intl/ko_kr/https://www.libreoffice.org/https://www.hancom.com/product/productMain.do"
+  },
+  {
+    "objectID": "index.html#오피스-전쟁-패러다임-충돌",
+    "href": "index.html#오피스-전쟁-패러다임-충돌",
+    "title": "생성형 AI",
+    "section": "오피스 전쟁: 패러다임 충돌",
+    "text": "오피스 전쟁: 패러다임 충돌"
+  },
+  {
+    "objectID": "index.html#챗gpt-시대-사무실",
+    "href": "index.html#챗gpt-시대-사무실",
+    "title": "생성형 AI",
+    "section": "챗GPT 시대 사무실",
+    "text": "챗GPT 시대 사무실\n\n챗GPT 사용원인인터페이스챗GPT AS-IS챗GPT TO-BE"
+  },
+  {
+    "objectID": "index.html#챗gpt가-이룬-대통합",
+    "href": "index.html#챗gpt가-이룬-대통합",
+    "title": "생성형 AI",
+    "section": "챗GPT가 이룬 대통합",
+    "text": "챗GPT가 이룬 대통합"
+  },
+  {
+    "objectID": "index.html#인터페이스-1",
+    "href": "index.html#인터페이스-1",
+    "title": "생성형 AI",
+    "section": "인터페이스",
+    "text": "인터페이스\n\n진화과정CLIGUIWUIMUILUI\n\n\n  \n\n\n\n\n\nflowchart TB\n    \n    subgraph A[\"사용자 인터페이스\"]\n    direction LR\n        CLI[\"CLI&lt;br&gt;Command Line Interface&lt;br&gt; 1950~\"]     --&gt; GUI[\"GUI &lt;br&gt; Graphic User Inferface&lt;br&gt; 1970~\"]\n        GUI               --&gt; WI[\"Web Interface &lt;br&gt; 1994~\"]\n        WI --&gt; MI[\"Mobile Interface &lt;br&gt; 2007~\"]\n        MI --&gt; NUI[\"LUI &lt;br&gt; Language User Interface &lt;br&gt; 2023~\"]\n\n    end\n\n\nclass A nodeStyle\n\nclassDef nodeStyle fill:#fcfbfa,stroke:#000000,stroke-width:0.7px,font-weight:bold,font-size:14px;\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://en.wikipedia.org/wiki/Computer_terminal\n\n\n\n\n\n\n\n\n\n\nhttps://kartsci.org/kocomu/computer-history/graphical-user-interface-history/\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://www.huffpost.com/entry/uber-your-way-through-cit_b_1205446\n\n\n\n\n\n\n\n\n\nhttps://twitter.com/sama/status/1515764302904377344"
+  },
+  {
+    "objectID": "index.html#데이터-과학-과거와-현재",
+    "href": "index.html#데이터-과학-과거와-현재",
+    "title": "생성형 AI",
+    "section": "데이터 과학 과거와 현재",
+    "text": "데이터 과학 과거와 현재\n \n\n\n과거\n\n\n\n현재"
+  },
+  {
+    "objectID": "index.html#글쓰기-진화",
+    "href": "index.html#글쓰기-진화",
+    "title": "생성형 AI",
+    "section": "글쓰기 진화",
+    "text": "글쓰기 진화\n\n글쓰기 역사생산성과 자동화를 넘어개발과 저작"
+  },
+  {
+    "objectID": "index.html#데이터-과학-디지털-글쓰기",
+    "href": "index.html#데이터-과학-디지털-글쓰기",
+    "title": "생성형 AI",
+    "section": "데이터 과학 → 디지털 글쓰기",
+    "text": "데이터 과학 → 디지털 글쓰기\n\n데이터 과학문서 구성요소문서 복잡성문서 도구 개발 역사\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n연도\n도구\n개발자\n\n\n\n\n1978\nTeX\nDonald Knuth\n\n\n1984\nLiterate Programming\nDonald Knuth\n\n\n1988\nMathematica Notebooks\nStephen Wolfram\n\n\n2001\nIPython\nFernando Perez\n\n\n2003\nEmacs org-mode\nCarsten Dominik\n\n\n2004\nMarkdown\nJohn Gruber\n\n\n2005\nSage Notebook\nWilliam Stein\n\n\n2006\nPandoc\nJohn MacFarlane\n\n\n2009\nGitHub Flavored Markdown\nTom Preston-Werner\n\n\n2011\niPython Notebook\nFernando Perez\n\n\n2012\nknitr\nYihui Xie\n\n\n2014\nProject Jupyter\nFernando Perez\n\n\n2020\nQuarto\nJ.J. Allaire"
+  },
+  {
+    "objectID": "index.html#디지털-글쓰기---쿼토",
+    "href": "index.html#디지털-글쓰기---쿼토",
+    "title": "생성형 AI",
+    "section": "디지털 글쓰기 - 쿼토",
+    "text": "디지털 글쓰기 - 쿼토\n\n삼권분립쿼토 소개쿼토 작업흐름쿼토\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n표 1: R 마크다운과 쿼토 비교\n\n\n\n\n\n기능\nR 마크다운\n쿼토(Quarto)\n\n\n\n\n파일형식\nhtml_document / pdf_document / word_document\nhtml / pdf / docx\n\n\n비머(Beamer)\nbeamer_presentation\nbeamer\n\n\n파워포인트(PPT)\npowerpoint_presentation\npptx\n\n\n웹 슬라이드\nxaringan / ioslides / revealjs\nrevealjs\n\n\n고급 레이아웃\ntufte / distill\nQuarto Article Layout\n\n\n상호 참조\nhtml_document2 / pdf_document2 / word_document2\nQuarto Crossrefs\n\n\n웹사이트/블로그\nblogdown / distill\nQuarto Websites / Quarto Blogs\n\n\n책\nbookdown\nQuarto Books\n\n\n인터랙티브 문서\nShiny Documents\nQuarto Interactive Documents\n\n\n페이지 HTML\npagedown\n출시 예정\n\n\n학술 논문\nrticles\nQuarto Journal Articles\n\n\n대쉬보드\nflexdashboard\nQuarto Dashboards\n\n\n인터랙티브 자습서\nlearnr\n계획 없음\n\n\n\n\n\n\n\n\n\n\n챗GPT 디지털 글쓰기"
+  },
+  {
+    "objectID": "index.html#쿼토-출판-1",
+    "href": "index.html#쿼토-출판-1",
+    "title": "생성형 AI",
+    "section": "쿼토 출판",
+    "text": "쿼토 출판\n\n책PPT웹사이트대시보드웹앱(BitStat2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/bitSlide/\n\n\n\n\n\n\nhttps://r2bit.com/\n\n\n\n\n\n\nhttps://statkclee.quarto.pub/\n\n\n\n\n\n\nhttps://r2bit.com/BitStat2/"
+  },
+  {
+    "objectID": "index.html#챗gpt-데이터-과학-도서",
+    "href": "index.html#챗gpt-데이터-과학-도서",
+    "title": "생성형 AI",
+    "section": "챗GPT 데이터 과학 도서",
+    "text": "챗GPT 데이터 과학 도서\n\n챗GPT 시리즈데이터 과학코딩쿼토SQL유닉스 쉘확률통계\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📘 교보 POD 종이책: https://bit.ly/4cVDxxL\n📗 교보 전자책: https://bit.ly/4dccQ8n\n🌐 웹사이트: https://bit.ly/4909pOB\n💻 소스코드: https://bit.ly/3wXugES (이광춘 2024b)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📘 교보 POD 종이책: https://bit.ly/4a8v1JS\n📗 교보 전자책: https://bit.ly/4auasHU\n🌐 웹사이트: https://bit.ly/48V8u1T\n💻 소스코드: https://bit.ly/48RqMB9 (이광춘 2024c)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📘 교보 POD 종이책: https://bit.ly/3wElKuk\n📗 교보 전자책: https://bit.ly/3IkWE6f\n🌐 웹사이트: https://bit.ly/3P7PVjX\n💻 소스코드: https://bit.ly/3InK46m (이광춘 2024d)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📘 교보 POD 종이책: https://bit.ly/3OJmMeT\n📗 교보 전자책: https://bit.ly/48fujZD\n🌐 웹사이트: https://bit.ly/48gYn7d\n💻 소스코드: https://bit.ly/3wrgeuP (이광춘 2024a)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n📘 교보 POD 종이책: https://bit.ly/434h5y9\n📗 교보 전자책: https://bit.ly/KzUdOU\n🌐 웹사이트: https://bit.ly/3I4FpWS\n💻 소스코드: https://bit.ly/3wrgeuP (이광춘·신종화 2023)\n📰 뉴스기사: 챗GPT가 던진 새 가능성, 데이터 과학 분야 통해 미리 살펴보기\n\n\n\n\n\n\n\n\n준비중\n\n\n\n📘 교보 POD 종이책: 준비중\n📗 교보 전자책: 준비중\n🌐 웹사이트: https://r2bit.com/gpt-stat/\n💻 소스코드: https://github.com/bit2r/gpt-stat/"
+  },
+  {
+    "objectID": "index.html#디지털쿼토-출판",
+    "href": "index.html#디지털쿼토-출판",
+    "title": "생성형 AI",
+    "section": "디지털(쿼토) 출판",
+    "text": "디지털(쿼토) 출판\n\n책PPT웹사이트대시보드웹앱(BitStat2)\n\n\n\n\n\n\n\n\n\n\n\n\n\nhttps://r2bit.com/bitSlide/\n\n\n\n\n\n\nhttps://r2bit.com/\n\n\n\n\n\n\nhttps://statkclee.quarto.pub/\n\n\n\n\n\n\nhttps://r2bit.com/BitStat2/"
   }
 ]

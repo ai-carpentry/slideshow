@@ -1,0 +1,68 @@
+# 저작도구
+
+## RStudio → Positron {.smaller}
+
+:::::::: panel-tabset
+### R 코드
+
+![](img/rstudio/R_Screenshot.png){fig-align="center" width="60%"}
+
+### R 스크립트
+
+![](img/rstudio/R_script.png){fig-align="center" width="60%"}
+
+### $\LaTeX$ + R
+
+![](img/rstudio/LaTex_R.jpg){fig-align="center" width="60%"}
+
+### RStudio
+
+::: {layout="[[1], [1,1]]"}
+![WYSWYG](img/rstudio/rstudio_session_4pane_layout.png){fig-align="center" width="35%"}
+
+![](img/rstudio/visual-markdown-editor-tips.webp){fig-align="center"}
+
+![](img/rstudio/modify-image-size-in-visual-markdown-editor.webp){fig-align="center"}
+:::
+
+### 과학기술 SW
+
+![](img/rstudio/posit-trend.png){fig-align="center" width="80%"}
+
+-   **재현성**: 다른 사람 저작 소프트웨어를 내가 실행할 수 있나?
+-   **회복성**: 소프트웨어가 망하게 되면 대안은 있는가?
+-   **참여**: 방법론을 결정하는데 참여할 수 있나?
+
+### 재현성
+
+![[@Peng2011]](img/reproducibility-spectrum.png){fig-align="center"}
+
+::::: columns
+::: {.column width="40%"}
+![](img/reproducible-matrix.jpg){fig-align="center"}
+:::
+
+::: {.column width="60%"}
+-   **Reproducible**: A result is reproducible when the same analysis steps performed on the same dataset consistently produces the same answer.
+
+-   **Replicable**: A result is replicable when the same analysis performed on different datasets produces qualitatively similar answers.
+
+-   **Robust**: A result is robust when the same dataset is subjected to different analysis workflows to answer the same research question (for example one pipeline written in R and another written in Python) and a qualitatively similar or identical answer is produced. Robust results show that the work is not dependent on the specificities of the programming language chosen to perform the analysis.
+
+-   **Generalisable**: Combining replicable and robust findings allow us to form generalisable results. [@turing-2022] <!-- Note that running an analysis on a different software implementation and with a different dataset does not provide generalised results. There will be many more steps to know how well the work applies to all the different aspects of the research question. Generalisation is an important step towards understanding that the result is not dependent on a particular dataset nor a particular version of the analysis pipeline. -->
+:::
+:::::
+
+### Compendium
+
+![[@Marwick2018]](img/compendium.png){fig-align="center" width="80%"}
+
+### 포지트론
+
+![](img/ide_war.jpg){fig-align="center" width="581"}
+
+::: aside
+-   [download positron](https://github.com/posit-dev/positron)
+-   [포지트론 소개](https://r2bit.com/gpt-ai/positron.html)
+:::
+::::::::

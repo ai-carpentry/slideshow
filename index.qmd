@@ -14,14 +14,20 @@ format:
 
 ## 목차
 
+1.  생성형AI 인터페이스
+1.  생성형AI 사무노동
 1.  디지털 글쓰기
-2.  쿼토 사례
-3.  생성형AI 사무노동
-4.  생성형AI 인터페이스
-5.  저작도구: 포지트론
-6.  쿼토 기본기
-6.  질의응답
+1.  디지털 출판
 
 <!-- 확정 -->
 
-<!-- {{< include slideshow/202408-quarto-llm/quarto-digital-writing.qmd >}} -->
+{{< include quarto-interface.qmd >}}
+
+{{< include quarto-office.qmd >}}
+
+{{< include quarto-writing.qmd >}}
+
+{{< include quarto-publishing.qmd >}}
+
+{{< include reference.qmd >}}
+

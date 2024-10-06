@@ -1,0 +1,202 @@
+# 쿼토 기본기
+
+## 쿼토 해부도 {.smaller}
+
+:::: {.columns}
+::: {.column width="20%"}
+
+::: callout-note
+### 쿼토 구성요소
+
+1. 문서형식 (YAML)
+1. 텍스트 (마크다운)
+1. 코드 (R/파이썬/SQL/줄리아 등)
+:::
+:::
+
+
+::: {.column width="80%"}
+
+```{markdown}
+---                           # <1>
+title: 문서 제목              # <2>
+author: 홍길동                # <2>
+date: 2024-08-27              # <2>
+format:                       # <2>
+  html:                       # <3>
+    theme: flatly             # <3>
+    toc: true                 # <3>
+---                           # <1>
+    
+# 마크다운 기초               # <4>
+## 텍스트 스타일              # <4>
+일반 텍스트입니다.            # <4>
+
+## 코드 블록                  # <4>
+```python                     # <5>
+def hello_world():            # <5>
+    print("안녕, 세계!")      # <5>
+```                           # <5>
+
+```
+
+
+1. 위아래로 세 개의 대시(`---`)로 구분
+
+2. `key: value` 형식의 키-값 쌍을 사용하여 문서형식 메타데이터 설정
+
+3. YAML의 구조는 들여쓰기에 매우 민감하므로, 정확한 들여쓰기를 유지하는 것이 중요
+
+4. 마크다운 문법에 맞춘 텍스트
+
+5. 파이썬 코드 블럭
+
+:::
+:::
+
+
+## 문서 작성 방법
+
+::: panel-tabset
+### 재현 불가능(?)한 방법
+
+![](img/quarto-reproducible.jpg){fig-align="center" width="349"}
+
+```{mermaid}
+%%| fig-align: center
+%%| eval: false
+%%| echo: false
+graph TD
+    A[R/파이썬, 엑셀, SQL <br> 데이터 분석] --> B[표와 그래프 포맷]
+    B --> C[표와 그래프를 <br> 아래아한글/워드에 복사]
+    B --> D[표와 그래프를 <br> PPT에 복사]
+    C --> E[내용 작성 및 포맷]
+    D --> F[내용 작성 및 포맷]
+    
+    G((<strong>스타일<br>업데이트</strong>)) --> B
+    
+    H{{데이터 업데이트}} --> A
+    I{{데이터 오류}} --> A
+
+    style H fill:#ffffff,stroke:#FFA07A
+    style I fill:#ffffff,stroke:#FFA07A
+    style G fill:#ffffff,stroke:#90cfff
+    
+```
+
+### 재현 가능한 방법
+
+![](img/quarto-mermaid.jpg){fig-align="center" width="349"}
+
+```{mermaid}
+%%| fig-align: center
+%%| eval: false
+%%| echo: false
+graph TB
+    A{{데이터 <br> 업데이트}}
+
+B\[데이터 정제\] C{{데이터 <br> 오류}} --\> B H((<strong>스타일<br>업데이트</strong>)) --\> E H --\> F B --\> D\[쿼토 문서 작성\] D --\> E\[R/파이썬 <br> 표/그래프 생성\] E --\> F\[쿼토 스타일 지정\] F --\> G\[보고서/PPT/책, <br> 웹사이트/대시보드 생성\] G --\> B
+
+```
+
+style A fill:#ffffff,stroke:#FFA07A style C fill:#ffffff,stroke:#FFA07A style H fill:#ffffff,stroke:#90cfff
+
+```         
+```
+:::
+
+## 싱글소싱과 변수설정 문서 {#single-sourcing .smaller}
+
+::: panel-tabset
+### YAML 헤더
+
+``` yaml
+---
+format:
+  html: 
+    embed-resources: true   # self-contained: yes # <1>
+  pdf: default                                    # <2>          
+  docx: default                                   # <3>
+format-links: [pdf, docx]                         # <4>
+---
+```
+
+<br>
+
+1.  HTML 파일을 다른 문서처럼 `.html` 파일 하나로 지정
+
+2.  pdf 파일 생성
+
+3.  MS 워드 파일 생성
+
+4.  다운로드 파일 형식 지정
+
+### `.qmd` &rarr; `.pdf`, `.html`, `.docx`
+
+![](img/quarto-single-sourcing.jpg){fig-align="center" width="590"}
+
+-   [소스코드](https://github.com/statkclee/quarto-single-sourcing)
+-   [3가지 문서](https://statkclee.github.io/quarto-single-sourcing/map_document.html)
+
+### ---
+
+### 변수설정 문서 (개념)
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+graph TD
+    A[("쿼토 문서 템플릿<br>.qmd")]
+    C["매개변수/시도명<br>params$province"] -->|입력| A
+    A -->|"생성"| B{"PDF 보고서"}
+    B -->|"18개 시도"| D[서울특별시]
+    B --> E[경기도]
+    B --> F["..."]
+    B --> G[부산광역시]
+    B --> H[제주특별자치도]
+
+    %% Styling
+    classDef template fill:#f9f,stroke:#333,stroke-width:2px,rx:10px,ry:10px;
+    classDef input fill:#adf,stroke:#333,stroke-width:2px;
+    classDef output fill:#fda,stroke:#333,stroke-width:2px;
+    classDef report fill:#9cf,stroke:#333,stroke-width:2px,rx:15px,ry:15px;
+    
+    class A template;
+    class C input;
+    class B report;
+    class D,E,F,G,H output;
+
+```
+
+![](img/quarto-parameterized-report.jpg){fig-align="center" width="414"}
+
+### 코드
+
+``` r
+# 0. 환경설정 ---------------------------------------
+library(tidyverse)
+library(quarto)
+
+# 1. 시도명 ---------------------------------------
+provinces <- c("강원도", "경기도", "경상남도", "경상북도", "광주광역시", 
+               "대구광역시", "대전광역시", "부산광역시", "서울특별시", 
+               "세종특별자치시", "울산광역시", "인천광역시", "전라남도", 
+               "전라북도", "제주특별자치도", "충청남도", "충청북도")
+
+# 2. 보고서 만들기 ---------------------------------------
+for(province in provinces) {
+  quarto_render(input = str_glue("{here::here()}/report_template.qmd"),
+                execute_params = list(province = province),
+                output_file = str_glue("report_{province}.pdf"))
+}
+
+```
+
+### 시도별 문서
+
+![](img/report_parameter.png){fig-align="center" width="522"}
+
+-   [소스코드](https://github.com/statkclee/quarto-single-sourcing)
+-   [18개 시도 PDF](https://github.com/statkclee/quarto-single-sourcing/tree/main/parameter_reports)
+:::
+

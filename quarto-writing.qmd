@@ -1,0 +1,202 @@
+# 도구(문서)의 인간 <br> 디지털 저작
+
+<br>
+
+![](images/writing/homo-faber.jpg)
+
+## 데이터 과학 과거와 현재 {.smaller}
+
+<br> <br>
+
+::: columns
+::: column
+### 과거
+
+<br>
+
+![](images/writing/jobshop.gif)
+:::
+
+::: column
+### 현재
+
+<br>
+
+![](images/writing/quarto_to_go.gif)
+:::
+:::
+
+## 글쓰기 진화 {.smaller}
+
+::: panel-tabset
+### 글쓰기 역사
+
+![](images/writing/writing_history.jpg)
+
+### 생산성과 자동화를 넘어
+
+![](images/writing/writing-evolution.jpg)
+
+### 개발과 저작
+
+![](images/writing/mermaid_docu_sw.jpg)
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+graph LR
+    subgraph "소프트웨어"
+        direction LR
+        sourcecode(소스코드) --> package1(패키지)
+        package1 --> product1["제품(S/W)"]
+        product1 --> distribute1(배포)
+        distribute1 --> service1["서비스<br>(앱)"]
+    end
+
+    subgraph "문서"
+        direction LR
+        text(텍스트) --> package2(패키지)
+        package2 --> product2["제품(문서)"]
+        product2 --> distribute2(배포)
+        distribute2 --> service2["서비스<br>(출판)"]
+    end
+```
+:::
+
+## 데이터 과학 → 디지털 글쓰기 {.smaller}
+
+::: panel-tabset
+### 데이터 과학
+
+![](images/writing/horst-eco-r4ds.png)
+
+### 문서 구성요소
+
+![](images/writing/data_science_document.jpg)
+
+### 문서 복잡성
+
+![](images/writing/markdown-writing.png){width="880"}
+
+### 문서 도구 개발 역사
+
+```{r}
+#| eval: false
+library(tidyverse)
+library(rvest)
+library(gt)
+library(gtExtras)
+
+history_html <- read_html('https://jjallaire.quarto.pub/notebook-publishing/#/history') 
+
+history_url <- history_html |> 
+  html_element('table') |> 
+  html_elements('a') |> 
+  html_attr("href")
+
+history_tbl <- history_html |> 
+  html_element('table') |> 
+  html_table() |> 
+  set_names(c("연도", "도구", "개발자"))  |> 
+  mutate(url = history_url) |> 
+  mutate(link = str_glue("<a href={url}>{도구}</a>")) |> 
+  select(연도, link, 개발자) |> 
+  add_row(연도 = 2020, link = "<a href=https://quarto.org>Quarto</a>",
+          개발자 = "J.J. Allaire")
+
+history_tbl |>
+  write_csv("../../data/history_tbl.csv")
+```
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(gt)
+library(gtExtras)
+
+history_tbl <- 
+  read_csv(glue::glue("{here::here()}/data/history_tbl.csv"))
+
+history_tbl |> 
+  mutate(link = map(link, gt::html)) |> 
+  select(연도, 도구=link, 개발자) |> 
+  gt() |> 
+    # gt_theme_hangul() |> 
+    cols_align("center")
+```
+:::
+
+
+## 디지털 글쓰기 - 쿼토 {.smaller}
+
+::: panel-tabset
+### 삼권분립
+
+![](images/writing/three-pillar.png){fig-align="center" width="615"}
+
+::: aside
+[챗GPT 디지털 글쓰기](https://r2bit.com/gpt-writing/)
+:::
+
+
+### 쿼토 소개
+
+<br>
+
+![](images/writing/horst_quarto_schematic.png)
+
+### 쿼토 작업흐름
+
+<br>
+<br>
+
+![](images/writing/quarto_workflow_mermaid.png)
+
+```{mermaid}
+%%| eval: false
+%%| echo: false
+graph LR
+    qmd(QMD) --> 주피터
+    주피터 --> 마크다운
+    마크다운 --> 팬독
+    팬독 --> pdf(PDF)
+    팬독 --> html(HTML)
+    팬독 --> docx(DOCX)
+    qmd --> knitr
+    knitr --> 마크다운
+
+    %% 노드 스타일
+    classDef default fill:#f9f9f9,stroke:#333,stroke-width:1px;
+    classDef source fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef process fill:#fff8e1,stroke:#ffa000,stroke-width:2px;
+    classDef output fill:#e8f5e9,stroke:#4caf50,stroke-width:2px;
+
+    %% 클래스 적용
+    class qmd,주피터,knitr source;
+    class 마크다운,팬독 process;
+    class pdf,html,docx output;
+
+```
+
+### 쿼토 
+
+|       기능        | R 마크다운                                                                                                                                                                                                                                           | 쿼토(Quarto)                                                                                                                                                                                  |
+|:-----------------:|:-----------------------------|:-----------------------|
+|     파일형식      | [html_document](https://pkgs.rstudio.com/rmarkdown/reference/html_document.html) / [pdf_document](https://pkgs.rstudio.com/rmarkdown/reference/pdf_document.html) / [word_document](https://pkgs.rstudio.com/rmarkdown/reference/word_document.html) | [html](https://quarto.org/docs/output-formats/html-basics.html) / [pdf](https://quarto.org/docs/output-formats/pdf-basics.html) / [docx](https://quarto.org/docs/output-formats/ms-word.html) |
+|   비머(Beamer)    | [beamer_presentation](https://pkgs.rstudio.com/rmarkdown/reference/beamer_presentation.html)                                                                                                                                                         | [beamer](https://quarto.org/docs/presentations/beamer.html)                                                                                                                                   |
+|  파워포인트(PPT)  | [powerpoint_presentation](https://pkgs.rstudio.com/rmarkdown/reference/powerpoint_presentation.html)                                                                                                                                                 | [pptx](https://quarto.org/docs/presentations/powerpoint.html)                                                                                                                                 |
+|    웹 슬라이드    | [xaringan](https://bookdown.org/yihui/rmarkdown/xaringan.html) / [ioslides](https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html) / [revealjs](https://bookdown.org/yihui/rmarkdown/revealjs.html)                                        | [revealjs](https://quarto.org/docs/presentations/revealjs/)                                                                                                                                   |
+|   고급 레이아웃   | [tufte](https://bookdown.org/yihui/rmarkdown/tufte-handouts.html) / [distill](https://rstudio.github.io/distill/figures.html)                                                                                                                        | [Quarto Article Layout](https://quarto.org/docs/authoring/article-layout.html)                                                                                                                |
+|     상호 참조     | [html_document2](https://bookdown.org/yihui/bookdown/a-single-document.html) / [pdf_document2](https://bookdown.org/yihui/bookdown/a-single-document.html) / [word_document2](https://bookdown.org/yihui/bookdown/a-single-document.html)            | [Quarto Crossrefs](https://quarto.org/docs/authoring/cross-references.html)                                                                                                                   |
+|  웹사이트/블로그  | [blogdown](https://pkgs.rstudio.com/blogdown/) / [distill](https://pkgs.rstudio.com/distill/)                                                                                                                                                        | [Quarto Websites](https://quarto.org/docs/websites/) / [Quarto Blogs](https://quarto.org/docs/websites/website-blog.html)                                                                     |
+|        책         | [bookdown](https://pkgs.rstudio.com/bookdown/)                                                                                                                                                                                                       | [Quarto Books](https://quarto.org/docs/books/)                                                                                                                                                |
+|  인터랙티브 문서  | [Shiny Documents](https://bookdown.org/yihui/rmarkdown/shiny-documents.html)                                                                                                                                                                         | [Quarto Interactive Documents](https://quarto.org/docs/interactive/shiny/)                                                                                                                    |
+|    페이지 HTML    | [pagedown](https://github.com/rstudio/pagedown)                                                                                                                                                                                                      | 출시 예정                                                                                                                                                                                     |
+|     학술 논문     | [rticles](https://pkgs.rstudio.com/rticles/)                                                                                                                                                                                                         | [Quarto Journal Articles](https://quarto.org/docs/journals/)                                                                                                                                  |
+|     대쉬보드      | [flexdashboard](https://pkgs.rstudio.com/flexdashboard/)                                                                                                                                                                                             | [Quarto Dashboards](https://quarto.org/docs/dashboards/)                                                                                                                                      |
+| 인터랙티브 자습서 | [learnr](https://pkgs.rstudio.com/learnr/)                                                                                                                                                                                                           | 계획 없음                                                                                                                                                                                   |
+
+: R 마크다운과 쿼토 비교 {#tbl-quarto-rmarkdown}
+
+:::
+

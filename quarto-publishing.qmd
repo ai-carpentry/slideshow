@@ -1,0 +1,147 @@
+# 디지털 출판
+
+## 디지털(쿼토) 출판 {.smaller}
+
+::: panel-tabset
+### 책
+
+![](images/publishing/chatGPT_series3.png){fig-align="center" width="552"}
+
+### PPT
+
+<p align="center">
+<iframe width="780" height="550" src="https://r2bit.com/bitSlide/" title="발표자료"></iframe>
+</p>
+
+<https://r2bit.com/bitSlide/>
+
+### 웹사이트
+
+<p align="center">
+<iframe width="780" height="550" src="https://r2bit.com/" title="공익법인 홈페이지"></iframe>
+</p>
+
+<https://r2bit.com/>
+
+### 대시보드
+
+<p align="center">
+<iframe width="780" height="550" src="https://statkclee.quarto.pub/" title="선거 대시보드"></iframe>
+</p>
+
+<https://statkclee.quarto.pub/>
+
+### 웹앱(BitStat2)
+
+<p align="center">
+<iframe width="780" height="550" src="https://r2bit.com/BitStat2/" title="BitStat2"></iframe>
+</p>
+
+<https://r2bit.com/BitStat2/>
+
+:::
+
+
+## 챗GPT 데이터 과학 도서 {.smaller}
+
+::::::::: panel-tabset
+### 챗GPT 시리즈
+
+![](images/publishing/chatGPT_series3.png){fig-align="center" width="552"}
+
+### 데이터 과학
+
+::: {#chatGPT-ds layout-ncol="2"}
+![](images/publishing/cover_ds.jpg){fig-align="center" width="250"}
+
+![](images/publishing/ds_logo.png){fig-align="center" width="300"}
+:::
+
+📘 교보 POD 종이책: <https://bit.ly/4cVDxxL>
+
+📗 교보 전자책: <https://bit.ly/4dccQ8n>
+
+🌐 웹사이트: <https://bit.ly/4909pOB>
+
+💻 소스코드: <https://bit.ly/3wXugES> [@lee2024ds]
+
+### 코딩
+
+::: {#chatGPT-coding layout-ncol="2"}
+![](images/publishing/cover_coding.jpg){fig-align="center" width="250"}
+
+![](images/publishing/coding_logo.png){fig-align="center" width="300"}
+:::
+
+📘 교보 POD 종이책: <https://bit.ly/4a8v1JS>
+
+📗 교보 전자책: <https://bit.ly/4auasHU>
+
+🌐 웹사이트: <https://bit.ly/48V8u1T>
+
+💻 소스코드: <https://bit.ly/48RqMB9> [@lee2024coding]
+
+### 쿼토
+
+::: {#chatGPT-sql layout-ncol="2"}
+![](images/publishing/cover_quarto.jpg){fig-align="center" width="250"}
+
+![](images/publishing/quarto_logo){fig-align="center" width="300"}
+:::
+
+📘 교보 POD 종이책: <https://bit.ly/3wElKuk>
+
+📗 교보 전자책: <https://bit.ly/3IkWE6f>
+
+🌐 웹사이트: <https://bit.ly/3P7PVjX>
+
+💻 소스코드: <https://bit.ly/3InK46m> [@lee2024quarto]
+
+### SQL
+
+::: {layout-ncol="2"}
+![](images/publishing/sql_cover.jpg){fig-align="center" width="250"}
+
+![](images/publishing/sql_logo.png){fig-align="center" width="300"}
+:::
+
+📘 교보 POD 종이책: <https://bit.ly/3OJmMeT>
+
+📗 교보 전자책: <https://bit.ly/48fujZD>
+
+🌐 웹사이트: <https://bit.ly/48gYn7d>
+
+💻 소스코드: <https://bit.ly/3wrgeuP> [@lee2024sql]
+
+### 유닉스 쉘
+
+::: {#chatGPT-shell layout-ncol="2"}
+![](images/publishing/cover_unix.jpg){fig-align="center" width="250"}
+
+![](images/publishing/hex_chatGPT_unix_shell_02.png){fig-align="center" width="300"}
+:::
+
+📘 교보 POD 종이책: <https://bit.ly/434h5y9>
+
+📗 교보 전자책: [https://bit.ly/KzUdOU](https://bit.ly/3KzUdOU)
+
+🌐 웹사이트: <https://bit.ly/3I4FpWS>
+
+💻 소스코드: [https://bit.ly/3wrgeuP](https://bit.ly/49p0I1f) [@lee2023shell]
+
+📰 뉴스기사: [챗GPT가 던진 새 가능성, 데이터 과학 분야 통해 미리 살펴보기](https://omn.kr/25f0i)
+
+### 확률통계
+
+::: {layout-ncol="2"}
+준비중
+:::
+
+📘 교보 POD 종이책: 준비중
+
+📗 교보 전자책: 준비중
+
+🌐 웹사이트: <https://r2bit.com/gpt-stat/>
+
+💻 소스코드: <https://github.com/bit2r/gpt-stat/>
+:::::::::
