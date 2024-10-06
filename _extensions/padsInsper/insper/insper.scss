@@ -1,0 +1,71 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=IBM+Plex+Sans+KR&display=swap');
+
+
+/*-- scss:defaults --*/
+
+
+$body-bg: #fff;
+$body-color: #414042;
+$link-color: #3124DC;
+$code-color: #9795E6;
+$code-block-border-color: #9795E6;
+
+$presentation-heading-color: #174F99;
+$presentation-font-size-root: 30px;
+
+$font-family-sans-serif: "IBM Plex Sans KR";
+
+$presentation-slide-text-align: left;
+
+$code-block-font-size: 1em;
+
+h1 {
+  text-align: center;
+}
+
+/*-- scss:rules --*/
+
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+code, pre {
+  font-size: 12px;
+  overflow: hidden !important;  // This will hide both horizontal and vertical overflow
+}
+
+.scrollable {
+  overflow-y: auto;
+  height: 90vh;
+}
+
+.output {
+//  max-height: 500px;
+  overflow-x: hidden !important;  // This will hide both
+  overflow-y: hidden !important;  // This will hide both  
+}
+
+.output3 {
+  //max-height: 1200px;
+  font-size: 10px;
+}
+
+
+.output-font {
+  //max-height: 1200px;
+  font-size: 8px;
+}
+
+.sourceCode.r {
+  font-family: "IBM Plex Sans KR", Courier, monospace;
+  font-size: 12px;
+  letter-spacing: -0.3px;
+}
+
+//.scroll-y {
+//  max-height: 300px;
+//  overflow-y: auto;
+//}

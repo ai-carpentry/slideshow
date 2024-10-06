@@ -1,0 +1,27 @@
+---
+title: "생성형 AI"
+subtitle: "인공지능 새로운 지평을 열다!"
+author: "이광춘"
+institute: "한국 R 사용자회"
+date: 2024-10-21
+format: 
+  insper-revealjs:
+    self-contained: false
+    code-overflow: wrap
+    footer: |
+      한국 R 사용자회 [chatGPT](https://r2bit.com/chatGPT/). theme [insper](https://github.com/padsInsper/quarto-insper-theme) 소스코드 [GitHub](https://github.com/padsInsper/quarto-insper-theme).
+---
+
+## 목차
+
+1.  디지털 글쓰기
+2.  쿼토 사례
+3.  생성형AI 사무노동
+4.  생성형AI 인터페이스
+5.  저작도구: 포지트론
+6.  쿼토 기본기
+6.  질의응답
+
+<!-- 확정 -->
+
+<!-- {{< include slideshow/202408-quarto-llm/quarto-digital-writing.qmd >}} -->

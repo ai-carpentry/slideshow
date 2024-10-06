@@ -1,0 +1,13 @@
+.Rproj.user
+.DS_Store
+Thumbs.db
+/public/
+/resources/
+.Rhistory
+
+/.quarto/
+
+tour-of-the-tidyverse-v2/images/penguin-tour.pptx
+tour-of-the-tidyverse-v2/images/drawio/penguin-tour.drawio
+
+/assets/

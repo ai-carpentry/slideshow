@@ -1,0 +1,64 @@
+project:
+  type: website
+  output-dir: docs
+  resources: 
+    - "data/*.mp3"
+  render:
+    - "*.qmd"
+
+
+lang: ko-KR
+date-format: "YYYY 년 MM 월 DD일"
+
+website:
+  title: "발표자료 | 한국 R 사용자회"
+  search: false
+  favicon: images/koRea_logo.ico
+  google-analytics: "UA-229551680-1"
+  navbar:
+    title: false
+    logo: images/koRea_logo.png
+    logo-alt: "Home" #doesn't seem to show up
+    right:
+      - icon: github
+        href: https://github.com/ai-carpentry/slideshow
+        aria-label: GitHub repo
+    left:
+      - text: 한국 R 사용자회
+        href: https://r2bit.com
+
+  site-url: https://ai-carpentry.github.io/slideshow
+  description: '한국 R 사용자회 발표자료 모음'
+
+format:
+  html:
+    theme:
+      - cosmo
+      - assets/quarto.scss
+    mainfont: "NanumGothic"
+    fontcolor: "#002642"
+    linkcolor: "#A23E02"
+    monofont: "Consolas"
+    monobackgroundcolor: "#FFFFFF"
+    backgroundcolor: "#fffbf2"
+
+
+bibliography: bibliography.bib
+link-citations: false
+
+
+execute:
+  freeze: auto
+
+knitr:
+  opts_chunk: 
+    eval: true
+    message: false
+    warning: false
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+editor_options: 
+  chunk_output_type: console
+
